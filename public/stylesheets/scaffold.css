@@ -1,0 +1,102 @@
+body { background-color: #fff; color: #333; }
+
+body, p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size:   13px;
+  line-height: 18px;
+}
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+a { color: #000; }
+a:visited { color: #666; }
+a:hover { color: #fff; background-color:#000; }
+
+div.field, div.actions {
+  margin-bottom: 10px;
+}
+
+/* Comments */
+
+#comments {
+  margin-bottom: 25px;
+  border-top: 1px solid #666;
+  border-left: 1px solid #666;
+  border-right: 1px solid #666;
+  background: #F1F1F1;
+}
+
+.comment {
+  padding: 9px;
+  border-bottom: 1px solid #666; 
+}
+
+#comment_author {
+  font-weight:bold;
+  padding:9px 0 0 45px;	
+}
+
+#comment_created_at {
+  padding:0 0 9px 45px;
+  color:#666;
+  font-size:11px;
+}
+
+#comment_text {
+	padding: 0 0 0 45px;
+}
+
+/* Articles */
+
+.article_body{
+  margin-bottom:1.5em;
+}
+
+#article-content{
+  padding:0 1.5em 0 1.5em;
+}
+
+#article-content h1{
+  font-size:3em;
+line-height:1;
+margin-bottom:0;
+padding-left: 0;
+}
+#notice {
+  color: green;
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  margin-bottom: 0px;
+  background-color: #c00;
+  color: #fff;
+}
+
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
+}

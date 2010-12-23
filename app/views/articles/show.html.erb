@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+
+<div id="article-content" class="span-17">
+  <div class="article_title">
+  	<h1><%= @article.title %></h1>
+  </div>
+ <div class="article_body">
+    <p>By "Bob"
+  	  on <%= @article.created_at.strftime("%B %d, %Y") %>
+    </p>
+    <p>
+      <%= @article.body %>
+    </p>
+    <p>Tags:
+      <% @article.tags.each do |tag|%>
+        <%= tag.name %>
+      <% end %>
+    </p>
+  </div>
+</div>
+<%= link_to 'Edit', edit_article_path(@article) %> |
+<%= link_to 'Back', articles_path %>
+
+<h2>Comments</h2>
+<div id ="comments">
+  <%= render :partial => @article.comments %>
+</div>
+<%= form_for([@article, @article.comments.build]) do |f| %>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :body %><br />
+    <%= f.text_area :body %>
+  </div>
+  <p><%= f.submit %></p>
+<% end %>

@@ -1,0 +1,15 @@
+<% div_for comment do %>
+  <div id = "comment_author">
+  	<%= comment.name %>
+  	<%= link_to 'Edit', edit_article_comment_path(@article, comment) %>
+  	<%= link_to 'Delete', article_comment_path(@article, comment), :confirm => 'Are you sure?', :method => :delete %>
+  </div>
+  <div id = "comment_created_at">
+  	<%= comment.created_at %>
+  </div>
+  <div id = "comment_text">
+	<p><%= comment.body %></p>
+  </div>
+<% end %>
+
+
