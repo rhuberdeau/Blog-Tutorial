@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+  before_filter :authenticate_user!, :except => [:index, :show]
   # GET /articles
   # GET /articles.xml
   def index
@@ -35,13 +36,15 @@ class ArticlesController < ApplicationController
   # GET /articles/1/edit
   def edit
     @article = Article.find(params[:id])
+    authorize! :edit, @article
   end
 
   # POST /articles
   # POST /articles.xml
   def create
     @article = Article.new(params[:article])
-
+    authorize! :create, @article
+    
     respond_to do |format|
       if @article.save
         format.html { redirect_to(@article, :notice => 'Article was successfully created.') }
@@ -57,7 +60,8 @@ class ArticlesController < ApplicationController
   # PUT /articles/1.xml
   def update
     @article = Article.find(params[:id])
-
+    authorize! :update, @article
+    
     respond_to do |format|
       if @article.update_attributes(params[:article])
         format.html { redirect_to(@article, :notice => 'Article was successfully updated.') }
@@ -73,8 +77,9 @@ class ArticlesController < ApplicationController
   # DELETE /articles/1.xml
   def destroy
     @article = Article.find(params[:id])
+    authorize! :destroy, @article
     @article.destroy
-
+    
     respond_to do |format|
       format.html { redirect_to(articles_url) }
       format.xml  { head :ok }
